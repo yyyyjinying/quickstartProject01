@@ -1,0 +1,30 @@
+#spring:
+#  application:
+#    name: springbootmybatis
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/aaa
+#    username: root
+#    password: 123456
+spring:
+  servlet:
+      context-path: /
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/aaa
+      username: root
+      password: 123456
+  profiles:
+    active: @profileActive@
+  redis:
+    host: localhost
+    port: 6379
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: t_
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: false # 数据库中的字段驼峰法命名和实体类中的驼峰法命名相冲突
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
